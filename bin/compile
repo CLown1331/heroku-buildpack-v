@@ -56,6 +56,6 @@ else
 fi
 
 cd $BUILD_DIR
-$V_DIR/v -prod app.v
+$V_DIR/v -prod . -o app
 
 echo "using ${v_repo} @${v_branch}" | indent
