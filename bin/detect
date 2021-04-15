@@ -2,8 +2,7 @@
 # bin/detect <build-dir>
 set -e
 
-count=`ls -1 *.v 2>/dev/null | wc -l`
-if [ $count != 0 ]
+if test -n "$(find "$1" -type f -name 'app.v' | sed 1q)"
 then echo V
 else echo no; exit 1
 fi
