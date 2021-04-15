@@ -2,8 +2,7 @@
 # bin/detect <build-dir>
 set -e
 
-myarray=(`find ./ -maxdepth 1 -name "*.v"`)
-if [ ${#myarray[@]} -gt 0 ]
+if test -n "$(find "$1" -type f -name 'vpm.txt' | sed 1q)"
 then echo V
 else echo no; exit 1
 fi
